@@ -39,6 +39,10 @@ const reserva = sequelize.define(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    precio: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     estado: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,

@@ -55,8 +55,15 @@ ctrlReservas.obtenerReserva = async (req, res) => {
 // Crear una reserva
 
 ctrlReservas.crearReserva = async (req, res) => {
-  const { nombre, apellido, email, fecha_salida, fecha_llegada, telefono } =
-    req.body;
+  const {
+    nombre,
+    apellido,
+    email,
+    fecha_salida,
+    fecha_llegada,
+    telefono,
+    precio,
+  } = req.body;
 
   try {
     const reserva = await Reserva.create({
@@ -67,6 +74,7 @@ ctrlReservas.crearReserva = async (req, res) => {
       fecha_salida,
       fecha_llegada,
       telefono,
+      precio,
     });
 
     if (!reserva) {
@@ -89,8 +97,15 @@ ctrlReservas.crearReserva = async (req, res) => {
 
 ctrlReservas.actualizarReserva = async (req, res) => {
   const { id } = req.params;
-  const { nombre, apellido, email, fecha_salida, fecha_llegada, telefono } =
-    req.body;
+  const {
+    nombre,
+    apellido,
+    email,
+    fecha_salida,
+    fecha_llegada,
+    telefono,
+    precio,
+  } = req.body;
 
   try {
     const reservaActualizada = await Reserva.update(
@@ -101,6 +116,7 @@ ctrlReservas.actualizarReserva = async (req, res) => {
         fecha_salida,
         fecha_llegada,
         telefono,
+        precio,
       },
       {
         where: {

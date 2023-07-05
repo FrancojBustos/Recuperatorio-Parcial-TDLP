@@ -14,30 +14,38 @@
                 <form id="formNuevaReserva" class="rounded border p-3" method="POST">
                     <h3 class="mb-3 text-center bg-primary text-light rounded p-2">Nueva Reserva</h3>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="nombre" name="nombre">
                         <label class="form-label">Nombre</label>
+                        <input type="text" placeholder="Nombre" class="form-control" id="nombre" name="nombre">
+                        
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="apellido" name="apellido">
                         <label class="form-label">Apellido</label>
+                        <input type="text" placeholder="Apellido" class="form-control" id="apellido" name="apellido">
+                        
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="email" name="email">
                         <label class="form-label">Correo Electronico</label>
+                        <input type="email" placeholder="bluelabel@gmail.com" class="form-control" id="email" name="email">
+                        
                     </div>
                     <div class="mb-3">
-                        <input type="number" class="form-control" id="telefono" name="telefono">
                         <label class="form-label">Telefono</label>
+                        <input type="number" placeholder="+54 9-0000-0000-00" class="form-control" id="telefono" name="telefono">
                     </div>
                     <div class="mb-3">
-                        <input type="datetime-local" class="form-control" id="fecha_salida" name="fecha_salida">
                         <label class="form-label">Fecha Salida</label>
+                        <input type="datetime-local" class="form-control" id="fecha_salida" name="fecha_salida">
                     </div>
                     <div class="mb-3">
-                        <input type="datetime-local" class="form-control" id="fecha_llegada" name="fecha_llegada">
                         <label class="form-label">Fecha LLegada</label>
+                        <input type="datetime-local" class="form-control" id="fecha_llegada" name="fecha_llegada"> 
                     </div>
-
+                    <div class="mb-3">
+                        <label class="form-label">Precio del Pasaje</label>
+                        <input type="text" placeholder="$0000.0000" class="form-control" id="precio" name="precio">
+                        
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
             </div>
@@ -58,14 +66,16 @@ formCrearReserva.addEventListener('submit', async (e) => {
     const fecha_llegada = document.querySelector('#fecha_llegada').value;
     const telefono = document.querySelector('#telefono').value;
     const email = document.querySelector('#email').value;
-
+    const precio = document.querySelector('#precio').value;
+    
     const reserva = {
         nombre,
         apellido,
         fecha_salida,
         fecha_llegada,
+        email,
         telefono,
-        email
+        precio,
     }
 
 

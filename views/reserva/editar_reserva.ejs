@@ -36,7 +36,11 @@
                         <label for="exampleFormControlInput1" class="form-label">fecha llegada</label>
                         <input type="datetime-local" value="" id="fecha_llegada" class="form-control" id="exampleFormControlInput1">
                     </div>
-
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">precio</label>
+                        <input type="text" value="" id="precio" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    
                     <button type="submit" class="btn btn-warning w-100">
                         Editar
                     </button>
@@ -54,6 +58,7 @@
         const email = document.querySelector('#email');
         const fecha_llegada = document.querySelector('#fecha_llegada');
         const fecha_salida = document.querySelector('#fecha_salida');
+        const precio = document.querySelector('#fecha_salida');
 
         const reservaId = formEditar.dataset.id;
 
@@ -68,6 +73,7 @@
             email.value = data.email;
             fecha_salida.value = data.fecha_salida;
             fecha_llegada.value = data.fecha_llegada;
+            precio.value = data.precio;
         })
 
 
@@ -83,6 +89,7 @@
                 email: e.target.email.value,
                 fecha_llegada: e.target.fecha_llegada.value,
                 fecha_salida: e.target.fecha_salida.value,
+                precio: e.target.precio.value,
             }
 
             try {
